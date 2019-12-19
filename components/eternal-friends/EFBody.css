@@ -1,0 +1,26 @@
+body{
+    background-color: #EBB646;
+    color: #0C0B13;
+}
+.efbody__intro{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.efbody__intro-text{
+    font-family: 'Courier Prime';
+    letter-spacing: 2px;
+    font-size: 34px;
+    line-height: 60px;
+}
+.efbody__user-option{
+    font-family: 'Courier Prime';
+    font-size: 24px;
+    line-height: 30px;
+}
+.efbody__none{
+    color: #BF834E;
+    font-style: italic;
+}

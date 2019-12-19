@@ -1,0 +1,33 @@
+.ef-member{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.ef-member-_friend-list-container{
+    margin-bottom: 30px;
+}
+.ef-member__friend-list-title{
+    font-family: 'Courier Prime';
+    letter-spacing: 2px;
+    font-size: 34px;
+    line-height: 60px;
+}
+.ef-member__friend{
+    margin: 10px 0;
+}
+.ef-member__friend-name, .ef-member__pending-friend, .ef-member__available-friend, .ef-member__add-friend-button{
+    font-family: 'Courier Prime';
+    font-size: 24px;
+}
+.ef-member__friend-remove, .ef-member__pending-yes, .ef-member__pending-no, .ef-member__add-friend-button{
+    font-family: 'Courier Prime';
+    color: #BF834E;
+}
+.ef-member__pending-no{
+    color: #6C3F20;
+}
+.ef-member__available-friend{
+    color: #51291F;
+}
