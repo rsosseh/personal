@@ -31,3 +31,7 @@
 .ef-member__available-friend{
     color: #51291F;
 }
+.ef-member__available-friends{
+    height: 300px;
+    overflow: scroll;
+}

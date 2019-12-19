@@ -15,6 +15,10 @@ body{
     font-size: 34px;
     line-height: 60px;
 }
+.efbody__user-cont{
+    height: 300px;
+    overflow: scroll;
+}
 .efbody__user-option{
     font-family: 'Courier Prime';
     font-size: 24px;
