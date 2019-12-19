@@ -40,7 +40,7 @@ class EFMemberPage extends React.Component{
             }
             return true;
         })
-        const available_friends = available_friends_list.map((friend) => {
+        const available_friends = available_friends_list.sort((a, b) => parseInt(a.split('r')[1]) - parseInt(b.split('r')[1])).map((friend) => {
             return(
                 <div className="ef-member__available-friend"
                     onClick={() => {this.addFriend(friend)}}

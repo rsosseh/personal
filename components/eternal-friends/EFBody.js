@@ -14,7 +14,7 @@ class EFBody extends React.Component{
 
     renderIntro = () => {
         const { users } = this.props;
-        const user_options = Object.keys(users).map((user) => {
+        const user_options = Object.keys(users).sort((a, b) => parseInt(a.split('r')[1]) - parseInt(b.split('r')[1])).map((user) => {
             return(
                 <div className="efbody__user-option" 
                     onClick={() => {this.setState({you: user})}}
