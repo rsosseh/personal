@@ -22,39 +22,28 @@ class EFMemberPage extends React.Component{
             firebase.database().ref(`users/${friend}/${you}`).set(false)
         }
     }
-    addFriend = (friend) => {
+    addFriend = () => {
         const { you, users } = this.props;
-        if(!users[you][friend]){
-            firebase.database().ref(`users/${friend}/${you}`).set("pending");
-            firebase.database().ref(`users/${you}/${friend}`).set("sent");
+        const new_friend = document.getElementById('ef-member__new-friend').value
+        if(users[new_friend] && !users[you][new_friend]){
+            firebase.database().ref(`users/${new_friend}/${you}`).set("pending");
+            firebase.database().ref(`users/${you}/${new_friend}`).set("sent");
+            document.getElementById('ef-member__new-friend').value = "";
+            document.querySelector('.efbody__error-space').innerHTML = ""
+            this.setState({modal_open: false});
+        } else {
+            document.querySelector('.efbody__error-space').innerHTML = "user doesnt exist or you're already friends"
         }
     }
     renderModal = () => {
-        const { you, users } = this.props;
-        const available_friends_list = Object.keys(users).filter(user => {
-            if(users[you][user] == true || users[you][user] == 'sent' ){
-                return false;
-            }
-            if(user === you){
-                return false;
-            }
-            return true;
-        })
-        const available_friends = available_friends_list.sort((a, b) => parseInt(a.split('r')[1]) - parseInt(b.split('r')[1])).map((friend) => {
-            return(
-                <div className="ef-member__available-friend"
-                    onClick={() => {this.addFriend(friend)}}
-                    key={`av-${friend}`}
-                >
-                    {friend}
-                </div>
-            )
-        })
         return(
             <div className="ef-member__modal">
-                <div className="ef-member__available-friends">
-                    {available_friends}
-                </div>
+                <input id="ef-member__new-friend" 
+                    className="efbody__input" 
+                    placeholder="but who?"/>
+                <div className="ef-member__send-invite"
+                    onClick={this.addFriend}>Send Invite</div>
+                <div className="efbody__error-space"></div>
             </div>
         )
     }
@@ -75,9 +64,12 @@ class EFMemberPage extends React.Component{
             }
         })
         let pending_list = [];
+        let sent_list = [];
         pending_list = Object.keys(users[you]).map((friend) => {
             if(users[you][friend] === "pending"){
                 return friend
+            } else if(users[you][friend] === "sent"){
+                sent_list.push(friend)
             }
         })
         pending_list = pending_list.filter(i => {return i != undefined});
@@ -100,6 +92,11 @@ class EFMemberPage extends React.Component{
                 </div>
             )
         })
+        const sent = sent_list.map((friend) => {
+            return(
+                <div className="ef-member__sent-container">{friend}</div>
+            )
+        })
 
         return(
             <div className="ef-member-_friend-list-container">
@@ -115,6 +112,16 @@ class EFMemberPage extends React.Component{
                         <div className="ef-member__friend-list-title">Pending:</div>
                         <div className="ef-member__pendings">
                             {pending}
+                        </div>
+                    </div>
+                    )
+                }
+                {
+                    sent_list.length > 0 && (
+                    <div className="ef-member__sent-list">
+                        <div className="ef-member__sent-list-title">Sent:</div>
+                        <div className="ef-member__sents">
+                            {sent}
                         </div>
                     </div>
                     )

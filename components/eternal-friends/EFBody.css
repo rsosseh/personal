@@ -23,8 +23,31 @@ body{
     font-family: 'Courier Prime';
     font-size: 24px;
     line-height: 30px;
+    cursor: pointer;
 }
 .efbody__none{
     color: #BF834E;
     font-style: italic;
+    cursor: pointer;
+}
+.efbody__input{
+    width: 250px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid black;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Courier Prime";
+    letter-spacing: -1px;
+}
+.efbody__submit{
+    font-family: "Courier Prime";
+    line-height: 34px;
+    cursor: pointer;
+}
+.efbody__error-space{
+    font-family: "Courier Prime";
+    color: #6C3F20;
 }
