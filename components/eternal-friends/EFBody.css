@@ -2,6 +2,9 @@ body{
     background-color: #EBB646;
     color: #0C0B13;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 .efbody__intro{
     position: absolute;
     left: 50%;
