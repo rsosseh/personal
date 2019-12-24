@@ -131,9 +131,11 @@ class EFMemberPage extends React.Component{
     }
     render(){
         const { modal_open } = this.state;
+        const { you } = this.props;
 
         return(
             <div className="ef-member">
+                <div className="ef-member__user-title">hey {you}</div>
                 {this.renderFriendList()}
                 <div className="ef-member__add-friend-button"
                     onClick={() => this.setState(
