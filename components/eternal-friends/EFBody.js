@@ -8,6 +8,12 @@ class EFBody extends React.Component{
         you: false,
         existing_user: undefined
     }
+    componentDidUpdate(){
+        const { existing_user } = this.state;
+        if(existing_user){
+            document.getElementById('efbody__name-input').value = existing_user;
+        }
+    }
     handleUser = () => {
         const { users } = this.props;
         const { existing_user } = this.state;
@@ -79,7 +85,6 @@ class EFBody extends React.Component{
     render(){
         const { you } = this.state;
         const { users } = this.props;
-        console.log(users);
 
         return(
             <div className="efbody">
