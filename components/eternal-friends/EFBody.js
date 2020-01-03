@@ -10,8 +10,9 @@ class EFBody extends React.Component{
     }
     componentDidUpdate(){
         const { existing_user } = this.state;
-        if(existing_user){
-            document.getElementById('efbody__name-input').value = existing_user;
+        const input_field = document.getElementById('efbody__name-input')
+        if(existing_user && input_field){
+            input_field.value = existing_user;
         }
     }
     handleUser = () => {
