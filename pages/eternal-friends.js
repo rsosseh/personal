@@ -9,7 +9,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
       <link href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i&display=swap" rel="stylesheet"></link>
     </Head>
-    <EFApp />
+    {false ? <EFApp /> : <div>damn son, where'd you find this ?</div>}
   </div>
 )
 
