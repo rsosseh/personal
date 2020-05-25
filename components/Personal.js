@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Personal.css";
+import ReactGA from 'react-ga';
 
 class Personal extends React.Component{
     constructor(){
@@ -19,6 +20,9 @@ class Personal extends React.Component{
         this.introStart.push(window.getComputedStyle(document.querySelector('.personal__one-headline')).top)
         window.addEventListener("scroll", this.handleScroll);
         window.setTimeout(this.removeLoad, 2000);
+
+        ReactGA.initialize('UA-154800081-1');
+        ReactGA.pageview(window.location.pathname);
     }
 
     removeLoad = () => {
