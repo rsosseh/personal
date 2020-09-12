@@ -1,5 +1,6 @@
 import React from 'react';
-import "./Personal.css";
+import PersonalStyle from './PersonalStyle';
+import styles from './Personal.global.styles';
 import ReactGA from 'react-ga';
 
 class Personal extends React.Component{
@@ -85,111 +86,114 @@ class Personal extends React.Component{
     }
     render(){
         return(
-            <div className="personal" style={{backgroundColor:this.state.color}}>
-                <div className="personal__loading-screen"/>
-                <div className="personal__container personal__one">
-                    <div className="personal__one-headline">
-                        Try to look past the symbol
+            <PersonalStyle>
+                <div className="personal" style={{backgroundColor:this.state.color}}>
+                    <style>{styles}</style>
+                    <div className="personal__loading-screen"/>
+                    <div className="personal__container personal__one">
+                        <div className="personal__one-headline">
+                            Try to look past the symbol
+                        </div>
+                        <div className="personal__one-cover">
+                            <img className="personal__one-image" src="/money.png"/>
+                            <span className="personal__one-overlay" />
+                        </div>
+                        <img className="personal__one-name-circle personal__one-name-loading" src="/name-circle.png" />
                     </div>
-                    <div className="personal__one-cover">
-                        <img className="personal__one-image" src="/money.png"/>
-                        <span className="personal__one-overlay" />
+                    <div className="personal__container personal__two">
+                        <img className="personal__two-me" src="/me.gif" />
+                        <img className="personal__two-hint" src="/dance.png" />
+                        <div className="personal__two-line-container">
+                            <div className="personal__two-line">I'm Ray, Today</div>
+                        </div>
                     </div>
-                    <img className="personal__one-name-circle personal__one-name-loading" src="/name-circle.png" />
-                </div>
-                <div className="personal__container personal__two">
-                    <img className="personal__two-me" src="/me.gif" />
-                    <img className="personal__two-hint" src="/dance.png" />
-                    <div className="personal__two-line-container">
-                        <div className="personal__two-line">I'm Ray, Today</div>
+                    <div className="personal__container personal__three">
+                        <div className="personal__three-headline">Your value is internal</div>
+                        <div className="personal__three-cover personal__three-gleam">
+                            <img src="/gleam.png" />
+                            <span className="personal__three-overlay" />
+                        </div>
+                        <div className="personal__three-cover personal__three-nightwalk">
+                            <img src="/nightwalk.png" />
+                            <span className="personal__three-overlay" />
+                        </div>
+                        <div className="personal__three-cover personal__three-napanya">
+                            <img src="/napanya.jpg" />
+                            <span className="personal__three-overlay" />
+                        </div>
+                        <img className="personal__three-hint" src="/a-home.png" />
                     </div>
-                </div>
-                <div className="personal__container personal__three">
-                    <div className="personal__three-headline">Your value is internal</div>
-                    <div className="personal__three-cover personal__three-gleam">
-                        <img src="/gleam.png" />
-                        <span className="personal__three-overlay" />
-                    </div>
-                    <div className="personal__three-cover personal__three-nightwalk">
-                        <img src="/nightwalk.png" />
-                        <span className="personal__three-overlay" />
-                    </div>
-                    <div className="personal__three-cover personal__three-napanya">
-                        <img src="/napanya.jpg" />
-                        <span className="personal__three-overlay" />
-                    </div>
-                    <img className="personal__three-hint" src="/a-home.png" />
-                </div>
-                <div className="personal__container personal__four">
-                    <div className="personal__four-headline">Things I've made for me and you with you</div>
-                    <a href="https://vimeo.com/155072344">
-                        <div className="personal__four-cover personal__four-bee">
-                            <img src="/bee.png" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://www.groupninemedia.com/careers">
-                        <div className="personal__four-cover personal__four-careers">
-                            <img src="/careers.gif" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://soundcloud.com/greytail/sets/you-can-do-it">
-                        <div className="personal__four-cover personal__four-record">
-                            <img src="/record.jpg" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://vimeo.com/151452558">
-                        <div className="personal__four-cover personal__four-sap1">
-                            <img src="/sap1.png" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <div className="personal__four-cover personal__four-shinobi">
-                        <img src="/shinobi.gif" />
-                        <span className="personal__four-overlay" />
-                    </div>
-                    <a href="https://vimeo.com/217888898">
-                        <div className="personal__four-cover personal__four-together">
-                            <img src="/together.png" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://soundcloud.com/candy_fiend/half-priced-candy-the-day-after-valentines-day">
-                        <div className="personal__four-cover personal__four-track">
-                            <img src="/track.jpg" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://www.thrillist.com/city-of-more">
-                        <div className="personal__four-cover personal__four-verizon">
-                            <img src="/verizon.gif" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                    <a href="https://www.thrillist.com/best-new-restaurants-2019">
-                        <div className="personal__four-cover personal__four-bnr">
-                            <img src="/bnr.gif" />
-                            <span className="personal__four-overlay" />
-                        </div>
-                    </a>
-                </div>
-                <div className="personal__container personal__five">
-                    <div className="personal__five-headline">i hope youre ok. its not alway easy</div>
-                    <div className="personal__five-link-container">
-                        <a href="mailto:ray.sosseh@gmail.com">
-                            <div className="personal__five-link">email</div>
+                    <div className="personal__container personal__four">
+                        <div className="personal__four-headline">Things I've made for me and you with you</div>
+                        <a href="https://vimeo.com/155072344">
+                            <div className="personal__four-cover personal__four-bee">
+                                <img src="/bee.png" />
+                                <span className="personal__four-overlay" />
+                            </div>
                         </a>
-                        <a href="https://www.linkedin.com/in/raysosseh/">
-                            <div className="personal__five-link">linkedin</div>
+                        <a href="https://www.groupninemedia.com/careers">
+                            <div className="personal__four-cover personal__four-careers">
+                                <img src="/careers.gif" />
+                                <span className="personal__four-overlay" />
+                            </div>
                         </a>
-                        <a href="https://www.instagram.com/boy_friday_/">
-                            <div className="personal__five-link">insta</div>
+                        <a href="https://soundcloud.com/greytail/sets/you-can-do-it">
+                            <div className="personal__four-cover personal__four-record">
+                                <img src="/record.jpg" />
+                                <span className="personal__four-overlay" />
+                            </div>
+                        </a>
+                        <a href="https://vimeo.com/151452558">
+                            <div className="personal__four-cover personal__four-sap1">
+                                <img src="/sap1.png" />
+                                <span className="personal__four-overlay" />
+                            </div>
+                        </a>
+                        <div className="personal__four-cover personal__four-shinobi">
+                            <img src="/shinobi.gif" />
+                            <span className="personal__four-overlay" />
+                        </div>
+                        <a href="https://vimeo.com/217888898">
+                            <div className="personal__four-cover personal__four-together">
+                                <img src="/together.png" />
+                                <span className="personal__four-overlay" />
+                            </div>
+                        </a>
+                        <a href="https://soundcloud.com/candy_fiend/half-priced-candy-the-day-after-valentines-day">
+                            <div className="personal__four-cover personal__four-track">
+                                <img src="/track.jpg" />
+                                <span className="personal__four-overlay" />
+                            </div>
+                        </a>
+                        <a href="https://www.thrillist.com/city-of-more">
+                            <div className="personal__four-cover personal__four-verizon">
+                                <img src="/verizon.gif" />
+                                <span className="personal__four-overlay" />
+                            </div>
+                        </a>
+                        <a href="https://www.thrillist.com/best-new-restaurants-2019">
+                            <div className="personal__four-cover personal__four-bnr">
+                                <img src="/bnr.gif" />
+                                <span className="personal__four-overlay" />
+                            </div>
                         </a>
                     </div>
+                    <div className="personal__container personal__five">
+                        <div className="personal__five-headline">i hope youre ok. its not alway easy</div>
+                        <div className="personal__five-link-container">
+                            <a href="mailto:ray.sosseh@gmail.com">
+                                <div className="personal__five-link">email</div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/raysosseh/">
+                                <div className="personal__five-link">linkedin</div>
+                            </a>
+                            <a href="https://www.instagram.com/boy_friday_/">
+                                <div className="personal__five-link">insta</div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </PersonalStyle>
         );
     }
 }
