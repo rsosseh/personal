@@ -92,7 +92,7 @@ class Personal extends React.Component{
                     <div className="personal__loading-screen"/>
                     <div className="personal__container personal__one">
                         <div className="personal__one-headline">
-                            Try to look past the symbol
+                            Enjoy !
                         </div>
                         <div className="personal__one-cover">
                             <img className="personal__one-image" src="/money.png"/>
