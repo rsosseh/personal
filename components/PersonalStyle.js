@@ -5,7 +5,7 @@ const PersonalStyle = styled.div`
     .personal__one-headline{
         position: absolute;
         text-transform: uppercase;
-        color: transparent;
+        color: #FFFFFF;
         -webkit-text-stroke: 3px #d7fbff;
         font-size: 96px;
         width: 830px;
